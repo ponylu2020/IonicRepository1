@@ -1,4 +1,6 @@
+import { ListPage } from './list/list.page';
 import { Component } from '@angular/core';
+import { Router, NavigationExtras } from '@angular/router';
 
 @Component({
   selector: 'app-tab2',
@@ -31,6 +33,16 @@ export class Tab2Page {
     '生态环境保护工程规划设计与损害鉴定标准',
     '大气环境损害鉴定评估相关法律法规与标准'];
 
-  constructor() {
+  constructor(public router: Router) {
+  }
+
+  gotoDetail(title: string){
+    let navigationExtras: NavigationExtras = {
+      queryParams: { detailTitle: title },
+      fragment: 'anchor'
+    };
+
+    // Navigate to the login page with extras
+    this.router.navigate(['/tabs/tab2/list'], navigationExtras);
   }
 }
