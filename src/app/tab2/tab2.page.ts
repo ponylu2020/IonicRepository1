@@ -37,11 +37,11 @@ export class Tab2Page {
   }
 
   gotoDetail(title: string){
-    let navigationExtras: NavigationExtras = {
+    const navigationExtras: NavigationExtras = {
       queryParams: { detailTitle: title },
       fragment: 'anchor'
     };
-
+    alert(title);
     // Navigate to the login page with extras
     this.router.navigate(['/tabs/tab2/list'], navigationExtras);
   }
