@@ -9,7 +9,7 @@
       <ion-item Slots="start" *ngIf="key % 2 == 0" color="Primary" lines="none" detail   routerLinkActive="active" (click)="gotoDetail(item)">
         {{item}}
       </ion-item>
-      <ion-item Slots="start"  *ngIf="key % 2 == 1" color="light" lines="none" detail   routerLinkActive="active" [routerLink]="['./list']">
+      <ion-item Slots="start"  *ngIf="key % 2 == 1" color="light" lines="none" detail   routerLinkActive="active" (click)="gotoDetail(item)">
         {{item}}
       </ion-item>
     </ion-menu-toggle>

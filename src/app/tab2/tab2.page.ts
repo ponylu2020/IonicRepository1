@@ -43,6 +43,6 @@ export class Tab2Page {
       relativeTo: this.route,
     };
     // Navigate to the login page with extras
-    this.router.navigate(['./list'], navigationExtras);
+    this.router.navigate(['/tabs/tab2/list', { id: '1', foo: 'foo' }]);
   }
 }
