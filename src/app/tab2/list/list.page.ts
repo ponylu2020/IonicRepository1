@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Observable } from 'rxjs';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, ParamMap } from '@angular/router';
+import { map, switchMap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-list',
@@ -11,13 +12,18 @@ export class ListPage implements OnInit {
 
   public title: string;
 
-  public items: Array<{ title: string; note: string; icon: string }> = [];
   constructor(public route: ActivatedRoute) {
-    this.title = this.route.snapshot.queryParamMap.get('detailTitle');
+
   }
 
 
   ngOnInit() {
+
+    this.route.queryParamMap.pipe(
+      map((params: ParamMap) =>
+        this.title = params.get('detailTitle'))
+    );
+    alert(this.route);
   }
   // add back when alpha.4 is out
   // navigate(item) {
