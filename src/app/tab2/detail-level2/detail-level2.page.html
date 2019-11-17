@@ -12,10 +12,7 @@
 <ion-content>
   <ion-list>
     <ion-menu-toggle auto-hide="false" *ngFor="let item of listItems; let key = index;">
-      <ion-item Slots="start" *ngIf="key % 2 == 0" color="Primary" lines="none" detail   routerLinkActive="active" (click)="gotoDetail(item.id, item.title)">
-        {{item.title}}
-      </ion-item>
-      <ion-item Slots="start"  *ngIf="key % 2 == 1" color="light" lines="none" detail   routerLinkActive="active" (click)="gotoDetail(item.id, item.title)">
+      <ion-item class ="listItem" Slots="start" color="Primary" lines="none" detail   routerLinkActive="active" (click)="gotoDetail(item.id, item.title)">
         {{item.title}}
       </ion-item>
     </ion-menu-toggle>
