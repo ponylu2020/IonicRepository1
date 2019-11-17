@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+        <ion-back-button defaultHref="/tabs/tab2" text=""></ion-back-button>
+    </ion-buttons>
+    <div class="title">
+      {{title}}
+    </div>
+</ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-menu-toggle auto-hide="false" *ngFor="let item of listItems; let key = index;">
+      <ion-item Slots="start" *ngIf="key % 2 == 0" color="Primary" lines="none" detail   routerLinkActive="active" (click)="gotoDetail(item.id, item.title)">
+        {{item.title}}
+      </ion-item>
+      <ion-item Slots="start"  *ngIf="key % 2 == 1" color="light" lines="none" detail   routerLinkActive="active" (click)="gotoDetail(item.id, item.title)">
+        {{item.title}}
+      </ion-item>
+    </ion-menu-toggle>
+  </ion-list>
+</ion-content>
+

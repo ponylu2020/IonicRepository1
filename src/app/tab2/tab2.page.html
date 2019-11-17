@@ -1,16 +1,16 @@
 <ion-header>
   <ion-toolbar>
-    <div class="title">生态环境损害鉴定评估法律法规与标准汇编 </div>
+    <div class="rootTitle">生态环境损害鉴定评估法律法规与标准汇编 </div>
   </ion-toolbar>
 </ion-header>
 <ion-content>
   <ion-list>
-    <ion-menu-toggle auto-hide="false" *ngFor="let item of menuItems; let key = index;">
-      <ion-item Slots="start" *ngIf="key % 2 == 0" color="Primary" lines="none" detail   routerLinkActive="active" (click)="gotoDetail(item)">
-        {{item}}
+    <ion-menu-toggle auto-hide="false" *ngFor="let item of menuItemsLevel; let key = index;">
+      <ion-item Slots="start" *ngIf="key % 2 == 0" color="Primary" lines="none" detail   routerLinkActive="active" (click)="gotoDetail(item.id, item.title)">
+        {{item.title}}
       </ion-item>
-      <ion-item Slots="start"  *ngIf="key % 2 == 1" color="light" lines="none" detail   routerLinkActive="active" (click)="gotoDetail(item)">
-        {{item}}
+      <ion-item Slots="start"  *ngIf="key % 2 == 1" color="light" lines="none" detail   routerLinkActive="active" (click)="gotoDetail(item.id, item.title)">
+        {{item.title}}
       </ion-item>
     </ion-menu-toggle>
   </ion-list>

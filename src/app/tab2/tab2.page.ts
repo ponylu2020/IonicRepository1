@@ -1,4 +1,3 @@
-import { ListPage } from './list/list.page';
 import { Component } from '@angular/core';
 import { Router, ActivatedRoute, NavigationExtras } from '@angular/router';
 
@@ -12,37 +11,26 @@ export class Tab2Page {
 
   public selectedItem = '具体条文';
 
-  public itemPages = [
-    {
-      title: '污染物性质鉴定',
-      url: '/home',
-      icon: 'home'
-    },
-    {
-      title: '地表水和沉积物',
-      url: '/list',
-      icon: 'list'
-    }];
-
-  public menuItems = ['生态环境损害鉴定评估通用法律',
-    '生态环境保护相关法规·规章及规范性文件',
-    '生态环境监测监察相关法规·规章及规范性文件',
-    '生态环境损害经济惩处与执法相关法规·规章及规范性文件',
-    '生态环境损害执法相关法规·规章及规范性文件',
-    '生态环境保护工业污染物排放标准',
-    '生态环境保护清洁生产行业标准',
-    '生态环境保护工程规划设计与损害鉴定标准',
-    '大气环境损害鉴定评估相关法律法规与标准'];
+  public menuItemsLevel = [
+    { id: '1', title: '大气环境损害鉴定评估相关法律法规与标准' },
+    { id: '2', title: '水生态环境损害鉴定评估相关法律法规与标准' },
+    { id: '3', title: '海洋生态环境损害鉴定评估相关法律法规与标准' },
+    { id: '4', title: '土壤生态环境损害鉴定评估法律法规与标准' },
+    { id: '5', title: '生态损害鉴定评估法律法规与标准' },
+    { id: '6', title: '噪声、辐射、地震等环境损害鉴定评估相关法律法规与标准' },
+    { id: '7', title: '其它法律法规与标准' },
+    { id: '8', title: '最新法律法规与标准' },
+  ];
 
   constructor(private router: Router, private route: ActivatedRoute) {
   }
 
-  gotoDetail(title: string){
+  gotoDetail(id: string, title: string) {
     const navigationExtras: NavigationExtras = {
-      queryParams: { detailTitle: title },
+      queryParams: { id, title },
       relativeTo: this.route,
     };
     // Navigate to the login page with extras
-    this.router.navigate(['/tabs/tab2/list', { id: '1', foo: 'foo' }]);
+    this.router.navigate(['./DetailLevel1'], navigationExtras);
   }
 }

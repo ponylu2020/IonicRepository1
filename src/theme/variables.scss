@@ -75,3 +75,43 @@
   --ion-color-light-shade: #d7d8da;
   --ion-color-light-tint: #f5f6f9;
 }
+
+.title
+{
+  text-align:center;
+  font-size: large;
+  font-weight:bold;
+  padding-top: 18px;
+  padding-bottom: 18px;
+}
+
+.rootTitle
+{
+  text-align:center;
+  font-size: large;
+  font-weight:bold;
+  padding-top: 18px;
+  padding-bottom: 18px;
+}
+
+.colTextRight
+{
+  text-align:right;
+}
+
+.colTextLeft
+{
+  text-align:left;
+}
+
+.backButton
+{
+  text-align:center;
+  color:var(--ion-color-light)
+}
+
+.listItem
+{
+  padding-top: 18px;
+  padding-bottom: 18px;
+}

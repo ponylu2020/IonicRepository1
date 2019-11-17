@@ -15,8 +15,8 @@ import { RouterModule } from '@angular/router';
         path: '', component: Tab2Page
       },
       {
-        path: 'list',
-        loadChildren: () => import('./list/list.module').then(m => m.ListPageModule)
+        path: 'DetailLevel1',
+        loadChildren: () => import('./detail-level1/detail-level1.module').then(m => m.DetailLevel1PageModule)
       }
     ])
   ],

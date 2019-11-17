@@ -18,12 +18,7 @@ export class ListPage implements OnInit {
 
 
   ngOnInit() {
-    this.route.paramMap.pipe(
-      map(params => {
-        this.title = params.get('id');
-      })
-    );
-    alert(this.title);
+    this.title = this.route.snapshot.queryParamMap.get('detailTitle');
   }
   // add back when alpha.4 is out
   // navigate(item) {
