@@ -1,7 +1,9 @@
 <ion-header>
   <ion-toolbar>
     <ion-buttons slot="start">
-        <ion-back-button defaultHref="/tabs/tab2" text=""></ion-back-button>
+        <ion-button color="primary" (click)="dismissModal()">
+          <ion-icon name="arrow-back" slot="start"></ion-icon>
+        </ion-button>
     </ion-buttons>
     <div class="title">
       {{title}}

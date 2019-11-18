@@ -6,16 +6,17 @@ import { Routes, RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 
 import { DetailLevel2Page } from './detail-level2.page';
+import {DetailLevel3PageModule} from '../detail-level3/detail-level3.module';
 
 const routes: Routes = [
   {
     path: '',
     component: DetailLevel2Page
   },
-  {
+/*   {
     path: 'DetailLevel3',
     loadChildren: () => import('../detail-level3/detail-level3.module').then(m => m.DetailLevel3PageModule)
-  }
+  } */
 ];
 
 @NgModule({
@@ -23,6 +24,7 @@ const routes: Routes = [
     CommonModule,
     FormsModule,
     IonicModule,
+    DetailLevel3PageModule,
     RouterModule.forChild(routes)
   ],
   declarations: [DetailLevel2Page]
