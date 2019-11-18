@@ -13,10 +13,10 @@ const routes: Routes = [
     path: '',
     component: DetailLevel2Page
   },
-/*   {
+   {
     path: 'DetailLevel3',
     loadChildren: () => import('../detail-level3/detail-level3.module').then(m => m.DetailLevel3PageModule)
-  } */
+  } 
 ];
 
 @NgModule({

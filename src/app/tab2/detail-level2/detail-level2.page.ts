@@ -3,6 +3,7 @@ import { ActivatedRoute, Router, NavigationExtras } from '@angular/router';
 import { ModalController } from '@ionic/angular';
 import { DetailLevel3Page } from '../detail-level3/detail-level3.page';
 
+
 @Component({
   selector: 'app-detail-level2',
   templateUrl: './detail-level2.page.html',
@@ -85,9 +86,12 @@ export class DetailLevel2Page implements OnInit {
    this.router.navigate(['./DetailLevel3'], navigationExtras);
   } */
   async presentModal(id: number, title: string) {
-    const modal = await this.modalController.create({
+    var modal = await this.modalController.create({
       component: DetailLevel3Page,
       componentProps: {
+        id,
+        title,
+        parentCtrl : modal
       }
 
     });

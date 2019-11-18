@@ -2,6 +2,7 @@ import { OnInit, Component, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Platform } from '@ionic/angular';
 import { Book } from 'epubjs';
+import { NavParams } from '@ionic/angular';
 
 @Component({
   selector: 'app-detail-level3',
@@ -12,13 +13,16 @@ import { Book } from 'epubjs';
 
 export class DetailLevel3Page implements OnInit {
 
-  id: string;
-  title: string;
-  parentCtrl: any;
+  @Input() id: string;
+  @Input() title: string;
+  @Input() parentCtrl: any;
   public book: Book;
 
-  constructor(private route: ActivatedRoute, private platform: Platform) {
-
+  constructor(private route: ActivatedRoute, private platform: Platform,
+              public navParams: NavParams) {
+    this.id = this.navParams.get('id');
+    this.title = this.navParams.get('title');
+    this.parentCtrl = this.navParams.get('parentCtrl');
   }
 
   ngOnInit() {
