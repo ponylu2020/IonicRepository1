@@ -15,14 +15,12 @@ export class DetailLevel3Page implements OnInit {
 
   @Input() id: string;
   @Input() title: string;
-  @Input() parentCtrl: any;
   public book: Book;
 
   constructor(private route: ActivatedRoute, private platform: Platform,
               public navParams: NavParams) {
     this.id = this.navParams.get('id');
     this.title = this.navParams.get('title');
-    this.parentCtrl = this.navParams.get('parentCtrl');
   }
 
   ngOnInit() {
@@ -44,9 +42,7 @@ export class DetailLevel3Page implements OnInit {
   }
 
   dismissModal() {
-    if (this.parentCtrl) {
-      this.parentCtrl.dismiss().then(() => { this.parentCtrl = null; });
-    }
+    this.navParams.data.modal.dismiss();
   }
 
 }
