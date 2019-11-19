@@ -1,16 +1,28 @@
 <ion-header>
   <ion-toolbar>
-    <ion-buttons slot="start">
+    <ion-buttons>
         <ion-button color="primary" (click)="dismissModal()">
-          <ion-icon name="arrow-back" slot="start"></ion-icon>
+          <ion-icon name="arrow-back" slot="end"></ion-icon>
         </ion-button>
+        <div class="title">
+          {{title}}
+        </div>
     </ion-buttons>
-    <div class="title">
-      {{title}}
-    </div>
 </ion-toolbar>
 </ion-header>
-
+<ion-menu side="start" type="push">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>目录</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <div id="toc">
+      
+    </div>
+  </ion-content>
+</ion-menu>
+<ion-router-outlet main></ion-router-outlet>
 <ion-content>
 
   <ion-grid>
@@ -27,6 +39,9 @@
               <ion-button icon="arrow-back" (click)="prevPage()" size="small" fill="clear">
                 <ion-icon name="arrow-back"></ion-icon>上一页
               </ion-button>
+            </ion-col>
+            <ion-col>
+              <ion-menu-button style="font-size: small;">目录</ion-menu-button>
             </ion-col>
             <ion-col class="colTextRight">
                 <ion-button icon="arrow-back" (click)="nextPage()" size="small" fill="clear">
