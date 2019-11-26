@@ -65,6 +65,7 @@ export class DetailLevel2Page implements OnInit {
   public id: string;
   public title: string;
   public listItems: any[];
+  files: any;
 
   constructor(private router: Router, private route: ActivatedRoute,
               public modalController: ModalController) {
@@ -77,6 +78,9 @@ export class DetailLevel2Page implements OnInit {
     this.listItems = this.menuItemsLevel.find(item => item.id === this.id).title;
   }
 
+
+
+  
 /*   gotoDetail(id: number, title: string) {
     const navigationExtras: NavigationExtras = {
       queryParams: { id, title },
