@@ -32,7 +32,7 @@
     "cordova-plugin-document-viewer": "^0.9.13",
     "cordova-plugin-file-opener2": "^2.2.1",
     "core-js": "^2.5.4",
-    "epubjs": "^0.3.85",
+    "epubjs": "^0.3.89",
     "rxjs": "~6.5.1",
     "tslib": "^1.9.0",
     "zone.js": "~0.9.1"
